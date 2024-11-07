@@ -1,17 +1,13 @@
 import { useState } from 'react'
+import { Footer } from './components/footer'
+import { Header } from './components/header'
 
-function App() {
+export const App = () => {
   const [todos, setTodo] = useState<string[]>([])
-
-  const currentYear = new Date().getFullYear()
 
   return (
     <div>
-      <header>
-        <h1>My new revolutionary to-do list app!</h1>
-
-        <button onClick={() => {}}>Add new todo</button>
-      </header>
+      <Header />
 
       <main>
         <h2>Advantages</h2>
@@ -34,11 +30,7 @@ function App() {
         </ul>
       </main>
 
-      <footer>
-        Copyright &copy; Jessica Castro {currentYear}
-      </footer>
+      <Footer />
     </div>
   )
 }
-
-export default App
