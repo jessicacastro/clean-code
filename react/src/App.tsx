@@ -1,34 +1,43 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodo] = useState<string[]>([])
+
+  const currentYear = new Date().getFullYear()
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <header>
+        <h1>My new revolutionary to-do list app!</h1>
+
+        <button onClick={() => {}}>Add new todo</button>
+      </header>
+
+      <main>
+        <h2>Advantages</h2>
+
+        <section>
+          <div>
+            <h3>Blazing fast</h3>
+            <p>This to-do list app is insanely fast</p>
+          </div>
+          <div>
+            <h3>No CSS</h3>
+            <p>Clean and flat design with no CSS</p>
+          </div>
+        </section>
+
+        <ul>
+          {todos.map((todo) => (
+            <li key={todo}>{todo}</li>
+          ))}
+        </ul>
+      </main>
+
+      <footer>
+        Copyright &copy; Jessica Castro {currentYear}
+      </footer>
+    </div>
   )
 }
 
