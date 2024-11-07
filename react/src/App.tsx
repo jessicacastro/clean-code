@@ -1,13 +1,26 @@
 import { useState } from 'react'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
+import * as Input from './components/Input'
 
 export const App = () => {
   const [todos, setTodo] = useState<string[]>([])
 
+  const handleCreateNewTodo = () => {
+    setTodo([...todos, 'New todo'])
+  }
+
   return (
     <div>
-      <Header onCreateNewTodo={() => {}}/>
+      <Header onCreateNewTodo={handleCreateNewTodo}/>
+
+      <Input.Root>
+        <Input.Label htmlFor="new-todo">New todo</Input.Label>
+        <Input.Icon>📝</Input.Icon>
+
+        <Input.FormField id="new-todo" />
+        <Input.ErrorMessage message="This is an error message" />
+      </Input.Root>
 
       <main>
         <h2>Advantages</h2>
