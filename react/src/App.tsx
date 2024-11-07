@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Footer } from './components/footer'
 import { Header } from './components/header'
-import * as Input from './components/Input'
+import { Input } from './components/input'
 
 export const App = () => {
   const [todos, setTodo] = useState<string[]>([])
